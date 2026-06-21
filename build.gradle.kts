@@ -26,7 +26,7 @@ kotlin {
 tasks {
     jar {
         manifest {
-            attributes["Main-Class"] = "dev.boecker.cclobby.CherryCaveLobby"
+            attributes["Main-Class"] = "dev.boecker.cclobby.LauncherKt"
         }
     }
 
