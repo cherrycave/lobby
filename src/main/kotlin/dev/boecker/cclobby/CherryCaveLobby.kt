@@ -44,14 +44,14 @@ class CherryCaveLobby {
             player.sendMessage { Component.text(player.effectiveViewDistance()) }
         }
 
-        minecraftServer.start("[::1]", System.getenv("PORT")?.toInt() ?: 25565);
+        minecraftServer.start(System.getenv("HOST") ?: "[::1]", System.getenv("PORT")?.toInt() ?: 25565);
     }
 
     private fun enableAuthentication(): Auth {
         val path = Path("forwarding.secret")
         return if (path.exists()) {
             val secret = path.readText()
-            logger.info { "Enabling Velocity Auth: $secret" }
+            logger.info { "Enabling Velocity Auth: \"$secret\"" }
              Auth.Velocity(secret)
         } else {
             logger.info { "Enabling Mojang Auth" }
