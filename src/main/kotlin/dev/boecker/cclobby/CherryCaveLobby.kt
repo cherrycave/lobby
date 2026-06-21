@@ -50,7 +50,7 @@ class CherryCaveLobby {
     private fun enableAuthentication(): Auth {
         val path = Path("forwarding.secret")
         return if (path.exists()) {
-            val secret = path.readText()
+            val secret = path.readText().trim()
             logger.info { "Enabling Velocity Auth: \"$secret\"" }
              Auth.Velocity(secret)
         } else {
