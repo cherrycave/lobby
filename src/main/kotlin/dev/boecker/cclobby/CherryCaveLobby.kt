@@ -44,7 +44,7 @@ class CherryCaveLobby {
             player.sendMessage { Component.text(player.effectiveViewDistance()) }
         }
 
-        minecraftServer.start("0.0.0.0", System.getenv("PORT")?.toInt() ?: 25565);
+        minecraftServer.start("[::1]", System.getenv("PORT")?.toInt() ?: 25565);
     }
 
     private fun enableAuthentication(): Auth {

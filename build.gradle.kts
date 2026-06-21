@@ -12,7 +12,7 @@ repositories {
 }
 
 dependencies {
-    implementation("net.minestom:minestom:2026.06.05-26.1.2")
+    implementation("net.minestom:minestom:2026.06.20-26.1.2")
     implementation("dev.hollowcube:polar:1.16.0")
 
     implementation("ch.qos.logback:logback-classic:1.5.34")
