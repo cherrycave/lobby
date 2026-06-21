@@ -1,0 +1,40 @@
+plugins {
+    kotlin("jvm") version "2.3.21"
+    id("com.gradleup.shadow") version "9.4.2"
+}
+
+group = "dev.boecker"
+version = "1.0-SNAPSHOT"
+
+repositories {
+    mavenCentral()
+    maven("https://repo.hypera.dev/snapshots/")
+}
+
+dependencies {
+    implementation("net.minestom:minestom:2026.06.05-26.1.2")
+    implementation("dev.hollowcube:polar:1.16.0")
+
+    implementation("ch.qos.logback:logback-classic:1.5.34")
+    implementation("io.github.oshai:kotlin-logging-jvm:8.0.4")
+}
+
+kotlin {
+    jvmToolchain(25)
+}
+
+tasks {
+    jar {
+        manifest {
+            attributes["Main-Class"] = "dev.boecker.cclobby.CherryCaveLobby"
+        }
+    }
+
+    build {
+        dependsOn(shadowJar)
+    }
+    shadowJar {
+        mergeServiceFiles()
+        archiveClassifier.set("")
+    }
+}
