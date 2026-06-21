@@ -31,4 +31,4 @@ jobs:
           tags: |
             ghcr.io/cherrycave/lobby:${{ github.sha }}
             ghcr.io/cherrycave/lobby:latest
-          platforms: linux/amd64,linux/arm64
+          platforms: linux/amd64
