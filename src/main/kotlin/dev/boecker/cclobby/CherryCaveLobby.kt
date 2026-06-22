@@ -43,11 +43,6 @@ class CherryCaveLobby {
             player.gameMode = GameMode.ADVENTURE
         }
 
-        globalEventHandler.addListener(PlayerLoadedEvent::class.java) { event: PlayerLoadedEvent? ->
-            val player: Player = event!!.player
-            player.sendMessage { Component.text(player.effectiveViewDistance()) }
-        }
-
         minecraftServer.start(System.getenv("HOST") ?: "[::1]", System.getenv("PORT")?.toInt() ?: 25565);
     }
 
