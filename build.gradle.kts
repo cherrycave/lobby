@@ -9,6 +9,7 @@ version = "0.1.0"
 repositories {
     mavenCentral()
     mavenLocal()
+    maven("https://maven.boecker.dev/releases/")
     maven("https://repo.hypera.dev/snapshots/")
 }
 
