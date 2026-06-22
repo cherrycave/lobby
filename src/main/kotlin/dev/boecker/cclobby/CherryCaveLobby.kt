@@ -20,6 +20,8 @@ class CherryCaveLobby {
     private val logger = KotlinLogging.logger {}
 
     fun start() {
+        System.setProperty("minestom.chunk-view-distance", "24");
+
         val auth = enableAuthentication()
         val minecraftServer = MinecraftServer.init(auth);
 
@@ -27,7 +29,6 @@ class CherryCaveLobby {
 
         val instanceManager = MinecraftServer.getInstanceManager()
         val instanceContainer = instanceManager.createInstanceContainer()
-        instanceContainer.viewDistance(32)
 
         instanceContainer.chunkLoader =
             PolarLoader(Path("worlds/lobby.polar"));
