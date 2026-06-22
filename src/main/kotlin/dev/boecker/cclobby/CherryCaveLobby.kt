@@ -1,5 +1,6 @@
 package dev.boecker.cclobby
 
+import dev.boecker.cherrycave.permission.minestom.PermissionsAPI
 import io.github.oshai.kotlinlogging.KotlinLogging
 import net.hollowcube.polar.PolarLoader
 import net.kyori.adventure.text.Component
@@ -21,6 +22,8 @@ class CherryCaveLobby {
     fun start() {
         val auth = enableAuthentication()
         val minecraftServer = MinecraftServer.init(auth);
+
+        PermissionsAPI.init(System.getenv("LUCKPERMS_REST_URL") ?: "http://localhost:25401")
 
         val instanceManager = MinecraftServer.getInstanceManager()
         val instanceContainer = instanceManager.createInstanceContainer()
