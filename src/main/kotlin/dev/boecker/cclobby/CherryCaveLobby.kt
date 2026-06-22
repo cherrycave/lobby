@@ -38,7 +38,6 @@ class CherryCaveLobby {
         ) { event: AsyncPlayerConfigurationEvent? ->
             val player: Player = event!!.player
             event.spawningInstance = instanceContainer
-            player.hasPermission()
             player.respawnPoint = Pos(0.0, 0.0, 0.0)
             player.gameMode = GameMode.ADVENTURE
         }
