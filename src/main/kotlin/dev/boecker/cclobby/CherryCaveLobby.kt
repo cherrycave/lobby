@@ -3,6 +3,7 @@ package dev.boecker.cclobby
 import dev.boecker.cclobby.c4.LobbyConnectFour
 import dev.boecker.cclobby.listener.preventItemShifts
 import dev.boecker.cclobby.messaging.MessagingSystem
+import dev.boecker.cclobby.navigator.LobbyNavigator
 import dev.boecker.cclobby.serializer.MaterialSerializer
 import dev.boecker.cherrycave.common.serializer.UUIDSerializer
 import dev.boecker.cherrycave.permission.minestom.PermissionsAPI
@@ -44,6 +45,8 @@ class CherryCaveLobby {
         }
     }
 
+    private lateinit var navigator: LobbyNavigator
+
     fun start() {
         System.setProperty("minestom.chunk-view-distance", "24");
 
@@ -57,6 +60,8 @@ class CherryCaveLobby {
 
         instanceContainer.chunkLoader =
             PolarLoader(Path("worlds/lobby.polar"));
+
+        navigator = LobbyNavigator(this)
 
         val globalEventHandler = MinecraftServer.getGlobalEventHandler()
         globalEventHandler.addListener(
