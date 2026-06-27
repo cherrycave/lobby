@@ -22,6 +22,10 @@ dependencies {
 
     implementation("dev.boecker.cherrycave:connectfour-core:0.1.0")
 
+    implementation("dev.boecker.cherrycave:common:0.1.0")
+
+    implementation("dev.kourier:amqp-client-robust:0.4.6")
+
     implementation("ch.qos.logback:logback-classic:1.5.34")
     implementation("io.github.oshai:kotlin-logging-jvm:8.0.4")
 }
