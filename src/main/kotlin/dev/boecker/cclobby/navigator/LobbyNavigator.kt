@@ -22,7 +22,7 @@ class LobbyNavigator(val lobby: CherryCaveLobby) {
 
     private val eventNode: EventNode<Event> = EventNode.all("navigator")
 
-    val navigatorItem: ItemStack = ItemStack.of(Material.SPYGLASS).with(
+    val navigatorItem: ItemStack = ItemStack.of(Material.COMPASS).with(
         DataComponents.CUSTOM_NAME, Component.text(
             "Navigator",
             NamedTextColor.BLUE
