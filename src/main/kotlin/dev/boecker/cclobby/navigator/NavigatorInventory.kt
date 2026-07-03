@@ -17,7 +17,7 @@ import net.minestom.server.item.Material
 val navigatorInventory = Inventory(InventoryType.CHEST_4_ROW, Component.text("Navigator", NamedTextColor.BLUE))
 
 fun initializeNavInventory(navigator: LobbyNavigator) {
-    val emptyItem = ItemStack.of(Material.GRAY_STAINED_GLASS_PANE).with(DataComponents.CUSTOM_NAME, Component.text(""))
+    val emptyItem = ItemStack.of(Material.GRAY_STAINED_GLASS_PANE).with(DataComponents.ITEM_NAME, Component.text(""))
 
     for (i in 0 until navigatorInventory.size) {
         navigatorInventory.setItemStack(i, emptyItem)
@@ -27,7 +27,7 @@ fun initializeNavInventory(navigator: LobbyNavigator) {
         navigatorInventory.setItemStack(
             itemConfig.slot,
             ItemStack.of(itemConfig.material)
-                .with(DataComponents.CUSTOM_NAME, navigator.lobby.minimessage.deserialize(itemConfig.name))
+                .with(DataComponents.ITEM_NAME, navigator.lobby.minimessage.deserialize(itemConfig.name))
                 .with(DataComponents.LORE, listOf(navigator.lobby.minimessage.deserialize(itemConfig.description)))
         )
     }

@@ -33,7 +33,7 @@ class LobbyConnectFour(val lobby: CherryCaveLobby) {
     val challenges = mutableMapOf<UUID, UUID>()
 
     val c4Item = ItemStack.of(Material.ENDER_EYE).with(
-        DataComponents.CUSTOM_NAME, Component.text(
+        DataComponents.ITEM_NAME, Component.text(
             "Connect Four",
             NamedTextColor.GREEN
         )
